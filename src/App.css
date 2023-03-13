@@ -2,37 +2,31 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Maplestory colour range from colormind.com */
+h4 {
+background-color: #D0C5C5;
+background-color: #CD323B;
+background-color: #3E2F20;
+background-color: #22A5D8;
+background-color: #4BD9EF;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header{
+  background-color: #22A5D8;
+  margin: 0.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.articleCard {
+  background-color: #D0C5C5;
+  margin: 0.5rem;
+}
+
+.articleImage{
+  max-height: 200px;
+}
+
+#articlesFilter {
+  background-color: #4BD9EF;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  margin: 0.5rem;
 }

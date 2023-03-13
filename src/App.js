@@ -1,25 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Articles from './components/Articles';
+import SingleArticle from './components/SingleArticle';
+import Topics from './components/Topics';
+import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
+
+
+
 // const cors = require('cors');
 // app.use(cors());
 
 function App() {
+  console.log('HERE IN App');
+  const [zoomInArticle, setZoomInArticle] = useState(789);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Routes>
+        <Route path = "/" element={
+                                <Articles 
+                                setZoomInArticle={setZoomInArticle}/>}>
+        </Route>
+        <Route path = "/articles" element={
+                                <Articles
+                                setZoomInArticle={setZoomInArticle}/>}>
+        </Route>
+        <Route path = "/articles/:article_id" element={
+                                <SingleArticle 
+                                zoomInArticle={zoomInArticle}/>}>
+        </Route>
+        <Route path = "/topics" element=
+                                {<Topics/>}>
+        </Route>
+      </Routes>
     </div>
   );
 }
