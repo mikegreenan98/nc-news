@@ -11,3 +11,10 @@ export const fetchArticles = (filter) => {
     // console.log(res.data.articles);
     return res.data.articles;});
 };
+
+export const fetchOneArticle = (article_id) => {
+    return newsApi.get(`/articles/${article_id}`).then((res) => {
+      // console.log(res.data.article[0]);
+      return res.data.article[0];});
+  };
+  
