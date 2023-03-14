@@ -1,19 +1,24 @@
 import {useState, useEffect} from "react";
 import { fetchOneArticle } from "../api";
 import CommentsDisplay from "./CommentsDisplay";
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
-const SingleArticle = ({zoomInArticle, setZoomInArticle}) => {
+const SingleArticle = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [currentArticle, setCurrentArticle] = useState(true);
     const [commentToDel, setCommentToDel] = useState(null);
 
+
+    const {article_id} = useParams();
+
     useEffect(() => {
         setIsLoading(true);
-        fetchOneArticle(zoomInArticle).then((data) => {
+        fetchOneArticle(article_id).then((data) => {
             setCurrentArticle(data);
             setIsLoading(false);
-        });
-    },[zoomInArticle]);
+    });
+    },[article_id]);
 
     if(isLoading) {return <h2>Loading the required article...</h2>}
 
@@ -26,11 +31,12 @@ const SingleArticle = ({zoomInArticle, setZoomInArticle}) => {
             <div className="singleArticleCardInners">
             <button>Vote for</button>
             <button>Add comment</button>
-            <button onClick={() => {setZoomInArticle(0)}}>return to articles</button>
+            <Link to={`/articles/`}>
+                <button>Return to articles</button>
+            </Link>
             </div>
             <CommentsDisplay 
-                zoomInArticle={zoomInArticle}
-                setZoomInArticle={setZoomInArticle} 
+                article_id={article_id}
                 setCommentToDel={setCommentToDel}/>
         </div>
     )

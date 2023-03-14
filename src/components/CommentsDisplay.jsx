@@ -1,8 +1,8 @@
 // import {useState, useEffect} from "react";
 
 
-const CommentsDisplay = ({zoomInArticle, setZoomInArticle, setCommentToDel}) => {
-    console.log('HERE IN CommentsDisplay with zoomInArticle: ' + zoomInArticle);
+const CommentsDisplay = ({article_id, setCommentToDel}) => {
+    console.log('HERE IN CommentsDisplay with article_id: ' + article_id);
 
     return(
         <div id="commentsList">
