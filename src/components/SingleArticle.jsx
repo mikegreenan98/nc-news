@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import { fetchOneArticle } from "../api";
+import { fetchOneArticle, patchCommentVote } from "../api";
 import CommentsDisplay from "./CommentsDisplay";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
@@ -14,13 +14,24 @@ const SingleArticle = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetchOneArticle(article_id).then((data) => {
-            setCurrentArticle(data);
+        fetchOneArticle(article_id).then((article) => {
+            setCurrentArticle(article);
             setIsLoading(false);
     });
     },[article_id]);
 
-    if(isLoading) {return <h2>Loading the required article...</h2>}
+    //Optimistically rendering: setting currentArticle votes before API call.
+    //State change forces a re-render so user sees vote increase immediately 
+    const incVotes = (inc) => {
+        setCurrentArticle({...currentArticle, votes: currentArticle.votes + inc});
+        patchCommentVote(currentArticle,inc).catch(() => {
+            // if error on patch, revert currentArticle to its previous state
+            setCurrentArticle({...currentArticle, votes: currentArticle.votes - inc})});
+    };
+
+    if(isLoading){
+        return <h2>Loading the required article...</h2>;
+    }
 
     return(
         <div className="singleArticleCard">
@@ -29,7 +40,12 @@ const SingleArticle = () => {
             <p className="quote"><i>{currentArticle.body}</i></p>
             <p className="postedBy">Posted by <b>{currentArticle.author}</b> on <b>{currentArticle.created_at.substring(0,10)}</b> ~~~ Votes: <b>{currentArticle.votes}</b></p>
             <div className="singleArticleCardInners">
-            <button>Vote for</button>
+            <button onClick={() => {
+                incVotes(1);
+            }}>Vote for</button>
+            <button onClick={() => {
+                incVotes(-1);
+            }}>Vote against</button>
             <button>Add comment</button>
             <Link to={`/articles/`}>
                 <button>Return to articles</button>
