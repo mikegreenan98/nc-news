@@ -26,12 +26,6 @@ const ArticlesDisplay = ({currentFilter, setZoomInArticle}) => {
 
     if(isLoading) {return <h2>Loading articles...</h2>}
 
-    // console.log(articlesList);
-    // console.log(articlesList[0].created_at);
-    // console.log(typeof articlesList[0].created_at);
-    // console.log(typeof Date.parse(articlesList[0].created_at));
-    // console.log(Date.parse(articlesList[0].created_at).getMonth());
-
     return(
         <div>
             <ul>
