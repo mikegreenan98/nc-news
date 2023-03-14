@@ -4,28 +4,19 @@ import Articles from './components/Articles';
 import SingleArticle from './components/SingleArticle';
 import Topics from './components/Topics';
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
 
 
 function App() {
-  console.log('HERE IN App');
-  const [zoomInArticle, setZoomInArticle] = useState(789);
 
   return (
-    <div className="App">
-      <Header />
+      <div className="App">
+      <Header/>
       <Routes>
-        <Route path = "/" element={
-                                <Articles 
-                                setZoomInArticle={setZoomInArticle}/>}>
+        <Route path = "/" element={<Articles/>}>
         </Route>
-        <Route path = "/articles" element={
-                                <Articles
-                                setZoomInArticle={setZoomInArticle}/>}>
+        <Route path = "/articles" element={<Articles/>}>
         </Route>
-        <Route path = "/articles/:article_id" element={
-                                <SingleArticle 
-                                zoomInArticle={zoomInArticle}/>}>
+        <Route path = "/articles/:article_id" element={<SingleArticle/>}>
         </Route>
         <Route path = "/topics" element=
                                 {<Topics/>}>
@@ -33,6 +24,7 @@ function App() {
       </Routes>
     </div>
   );
+
 }
 
 export default App;

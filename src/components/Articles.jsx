@@ -1,10 +1,9 @@
 import ArticlesDisplay from "./ArticlesDisplay";
-import ArticleFilter from "./ArticlesFilter"
+import ArticleFilter from "./ArticlesFilter";
 import { useState } from "react";
 
 
-const Articles = ({setZoomInArticle}) => {
-    console.log('HERE IN Articles');
+const Articles = () => {
   const [currentFilter, setCurrentFilter] = useState({ temp: "initial temp Filter" });
 
     return(
@@ -12,11 +11,8 @@ const Articles = ({setZoomInArticle}) => {
             <ArticleFilter
                 setCurrentFilter={setCurrentFilter}/>
             <ArticlesDisplay 
-                currentFilter={currentFilter}
-                setZoomInArticle={setZoomInArticle}
-                />
+                currentFilter={currentFilter}/>
         </div>
     )
 }
-
 export default Articles;
