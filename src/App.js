@@ -7,10 +7,6 @@ import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
 
-
-// const cors = require('cors');
-// app.use(cors());
-
 function App() {
   console.log('HERE IN App');
   const [zoomInArticle, setZoomInArticle] = useState(789);
