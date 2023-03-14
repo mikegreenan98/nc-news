@@ -26,6 +26,14 @@ background-color: #4BD9EF;
   margin: 0.5rem;
 }
 
+.singleArticleCardInners {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+
+}
+
 .articleImage{
   max-height: 200px;
 }
@@ -34,4 +42,19 @@ background-color: #4BD9EF;
   background-color: #4BD9EF;
   color: white;
   margin: 0.5rem;
+}
+
+#quote{
+  text-align: left;
+  font-size: 0.7rem;
+
+}
+
+.quote {
+  font-style: italic;
+}
+
+.singleArticleTitle{
+  margin-top: 2rem;
+  padding-top: 2rem;
 }

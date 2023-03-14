@@ -23,7 +23,7 @@ function App() {
 
   return (
       <div className="App">
-      <Header />
+      <Header setZoomInArticle={setZoomInArticle}/>
       <Routes>
         <Route path = "/" element={
                                 <Articles 
