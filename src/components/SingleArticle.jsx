@@ -3,8 +3,6 @@ import { fetchOneArticle } from "../api";
 import CommentsDisplay from "./CommentsDisplay";
 
 const SingleArticle = ({zoomInArticle, setZoomInArticle}) => {
-    console.log('HERE IN SingleArticle with zoomIN = ' + zoomInArticle);
-
     const [isLoading, setIsLoading] = useState(true);
     const [currentArticle, setCurrentArticle] = useState(true);
     const [commentToDel, setCommentToDel] = useState(null);
@@ -12,7 +10,6 @@ const SingleArticle = ({zoomInArticle, setZoomInArticle}) => {
     useEffect(() => {
         setIsLoading(true);
         fetchOneArticle(zoomInArticle).then((data) => {
-            // console.log(data);
             setCurrentArticle(data);
             setIsLoading(false);
         });

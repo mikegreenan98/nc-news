@@ -2,16 +2,13 @@ import { useState } from "react";
 
 
 const ArticlesFilter = ({setCurrentFilter}) => {
-    console.log('HERE IN Articles Filter');
 
 const handleSubmit = (event) => {
     event.preventDefault();
     setCurrentFilter({temp: "Filter now set"});
 }
 
-
-
-    return(
+return(
         <div id="articlesFilter">
             <form onSubmit={handleSubmit}>
                 <textarea placeholder="topic?"></textarea>

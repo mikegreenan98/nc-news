@@ -3,26 +3,16 @@ import { fetchArticles } from "../api";
 
 
 const ArticlesDisplay = ({currentFilter, setZoomInArticle}) => {
-    console.log('HERE IN ArticlesDisplay with current filter: ');
-    console.log(currentFilter);
-
     const [isLoading, setIsLoading] = useState(true);
     const [articlesList, setArticlesList] = useState([]);
 
     useEffect(() => {
         setIsLoading(true);
         fetchArticles(currentFilter).then((articles) => {
-            // console.log(articles);
             setArticlesList(articles);
             setIsLoading(false);
         });
     },[currentFilter]);
-
-    const handleClick = (event) => {
-        event.preventDefault();
-        console.log(event.target);
-        setZoomInArticle(event.target);
-    };
 
     if(isLoading) {return <h2>Loading articles...</h2>}
 
@@ -39,7 +29,6 @@ const ArticlesDisplay = ({currentFilter, setZoomInArticle}) => {
                         <p>Topic: {article.topic}</p>
                         <p>Votes: {article.votes}</p>
                         <p>Date: {article.created_at.substring(0,10)}</p>
-                        {/* <button onClick={handleClick}>View this article</button> */}
                         <button onClick={() => {setZoomInArticle(article.article_id)}}>View this article</button>
                     </li>);
                 })}

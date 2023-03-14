@@ -9,13 +9,6 @@ import { useState } from "react";
 
 function App() {
   const [zoomInArticle, setZoomInArticle] = useState(0);
-  console.log('HERE IN App - zoominArticle is: ' + zoomInArticle);
-
-  // if(zoomInArticle){
-  //   return <singleArticle>;
-  // };
-  // {zoomInArticle ? <SingleArticle zoomInArticle={zoomInArticle}/>:
-  // }
 
   return (
       <div className="App">

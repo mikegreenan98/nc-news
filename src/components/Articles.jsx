@@ -5,7 +5,6 @@ import { useState } from "react";
 
 
 const Articles = ({zoomInArticle, setZoomInArticle}) => {
-    console.log('HERE IN Articles with zoominArticle set to: ' + zoomInArticle);
   const [currentFilter, setCurrentFilter] = useState({ temp: "initial temp Filter" });
 
     if(zoomInArticle !== 0){

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const Header = ({setZoomInArticle}) => {
-    console.log('HERE In Header');
   return (
     <div className="header">
       <h1>NC NEWS</h1>
