@@ -26,8 +26,8 @@ const SingleArticle = () => {
         <div className="singleArticleCard">
             <p className = "singleArticleTitle"><b>{currentArticle.title}</b></p>
             <img className="articleImage" src={currentArticle.article_img_url} alt=""></img>
-            <p id="quote"><i>{currentArticle.body}</i></p>
-            <p id="postedBy">Posted by <b>{currentArticle.author}</b> on <b>{currentArticle.created_at.substring(0,10)}</b> ~~~ Votes: <b>{currentArticle.votes}</b></p>
+            <p className="quote"><i>{currentArticle.body}</i></p>
+            <p className="postedBy">Posted by <b>{currentArticle.author}</b> on <b>{currentArticle.created_at.substring(0,10)}</b> ~~~ Votes: <b>{currentArticle.votes}</b></p>
             <div className="singleArticleCardInners">
             <button>Vote for</button>
             <button>Add comment</button>
