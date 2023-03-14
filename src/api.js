@@ -16,5 +16,11 @@ export const fetchOneArticle = (article_id) => {
     return newsApi.get(`/articles/${article_id}`).then((res) => {
       // console.log(res.data.article[0]);
       return res.data.article[0];});
-  };
+};
   
+export const fetchComments = (article_id) => {
+  return newsApi.get(`/articles/${article_id}/comments`).then((res) => {
+    console.log(res.data.comments);
+    return res.data.comments;});
+};
+
