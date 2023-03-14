@@ -5,10 +5,15 @@
 .articleCard {
   background-color: #D0C5C5;
   margin: 0.5rem;
+  font-size: 0.7rem;
 }
 
 
 .articleImage{
+  max-height: 70px;
+}
+
+.singleArticleImage{
   max-height: 200px;
 }
 
@@ -29,12 +34,6 @@ button{
   border-top: 0.2rem solid #3E2F20;
   margin-right: 2rem;
 }
-
-/* .commentsList{
-  font-size: 0.7rem;
-  padding-left: 0;
-  margin-left: 0;
-} */
 
 /* Maplestory colour range from colormind.com */
 h4 {

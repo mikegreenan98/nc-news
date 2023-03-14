@@ -24,6 +24,7 @@ const ArticlesDisplay = ({currentFilter}) => {
             <ul>
                 {articlesList.map((article) => {
                     return(
+                    <div className="article">
                     <li key={article.article_id} className="articleCard">
                         <p>Title: {article.title}</p>
                         <p>Id: {article.article_id}</p>
@@ -35,7 +36,8 @@ const ArticlesDisplay = ({currentFilter}) => {
                         <Link to={`/articles/${article.article_id}`}>
                         <button>View this article</button>
                         </Link>
-                    </li>);
+                    </li>
+                    </div>);
                 })}
             </ul>
         </div>

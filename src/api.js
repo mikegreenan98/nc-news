@@ -28,3 +28,8 @@ export const patchCommentVote = (article, inc) => {
   })
 };
 
+export const postComment = (article_id, postObj) => {
+  console.log(article_id);
+  console.table(postObj);
+  console.table("TBD = WED MORNING !!!!");
+}
