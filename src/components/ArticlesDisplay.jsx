@@ -16,6 +16,7 @@ const ArticlesDisplay = ({currentFilter}) => {
         });
     },[currentFilter]);
 
+
     if(isLoading) {return <h2>Loading articles...</h2>}
 
     return(
