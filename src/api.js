@@ -34,3 +34,16 @@ export const postComment = (article_id, postObj) => {
     return res.data.comment[0];
   });
 };
+
+export const fetchTopics = () => {
+  return newsApi.get(`/topics`).then((res) =>{
+    console.log(res.data.topics);
+  return res.data.topics;
+});
+};
+
+export const fetchArticlesForTopic = (topic) => {
+return newsApi.get(`/articles/?topic=${topic}`).then((res) => {
+    console.log(res.data.articles);
+  return res.data.articles;});
+};

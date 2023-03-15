@@ -4,6 +4,7 @@ import Articles from './components/Articles';
 import SingleArticle from './components/SingleArticle';
 import Topics from './components/Topics';
 import { Routes, Route } from "react-router-dom";
+import DisplayArticlesForTopic from './components/DisplayArticlesForTopic';
 
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
         </Route>
         <Route path = "/topics" element=
                                 {<Topics/>}>
+        </Route>
+        <Route path = "/articles?topic=:topic_id" element= {<DisplayArticlesForTopic/>}>
         </Route>
       </Routes>
     </div>
