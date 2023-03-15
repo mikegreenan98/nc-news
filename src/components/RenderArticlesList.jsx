@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const RenderArticlesList = ({list}) => {
-console.log('in RenderList with: list size' + list.length);
+const RenderArticlesList = ({list, setTopicFilter}) => {
+    
+    console.log("ISSUE - CAN'T GET BACK TO TOPICS BECAUSE CAN'T CHANGE STATE HERE");
+    // useEffect(()=>{
+    //     setTopicFilter("");
+    // },[list]);
     
     
     return(

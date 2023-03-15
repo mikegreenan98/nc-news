@@ -8,7 +8,7 @@ import DisplayArticlesForTopic from './components/DisplayArticlesForTopic';
 
 
 function App() {
-
+console.log('app');
   return (
       <div className="App">
       <Header/>
@@ -22,7 +22,9 @@ function App() {
         <Route path = "/topics" element=
                                 {<Topics/>}>
         </Route>
-        <Route path = "/articles?topic=:topic_id" element= {<DisplayArticlesForTopic/>}>
+        <Route path = "/articles?topic=:topic_id" element={<DisplayArticlesForTopic/>}>
+        </Route>
+        <Route path = "/articles?topic=football" element={<DisplayArticlesForTopic/>}>
         </Route>
       </Routes>
     </div>

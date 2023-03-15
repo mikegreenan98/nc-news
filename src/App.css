@@ -1,3 +1,13 @@
+
+/* Maplestory colour range from colormind.com */
+.aaa {
+  background-color: #D0C5C5;
+  background-color: #CD323B;
+  background-color: #3E2F20;
+  background-color: #22A5D8;
+  background-color: #4BD9EF;
+}
+
 .App {
   text-align: center;
 }
@@ -32,32 +42,53 @@ button{
   margin-right: 2rem;
 }
 
-#currentUserName{
+/* #currentUserName{
   font-size: 1rem;
   text-align: right;
   padding-right: 1rem;
-}
+} */
 
 #currentUserText{
-  font-size: 0.7rem;
-  text-align: right;
-  padding-right: 1rem;
-}
+  font-size: 0.6rem;
+  margin: 3rem;
+  color: black;
+  background: #4BD9EF;
+  border: 0.6rem solid #4BD9EF;
+  border-radius: 45%;
+  text-align:center;
 
-/* Maplestory colour range from colormind.com */
-h4 {
-background-color: #D0C5C5;
-background-color: #CD323B;
-background-color: #3E2F20;
-background-color: #22A5D8;
-background-color: #4BD9EF;
+  /* text-align: right; */
+  /* padding-right: 1rem; */
 }
 
 .header{
   background-color: #22A5D8;
   margin: 0.5rem;
+  padding: 0%;
+  max-height: 10rem;
 }
 
+.headerText{
+  color: #3E2F20;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+/* .navlink2{
+  color: #CD323B;
+  margin-bottom: 3rem;
+  text-decoration: wavy;
+} */
+
+#navAndID{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content:center;
+  justify-content: space-around;
+  /* background-color: red; */
+
+}
 
 .postedBy {
   font-size: 0.7rem;
