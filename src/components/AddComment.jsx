@@ -6,54 +6,52 @@ import { postComment } from "../api";
 const AddComment = ({article_id, wantToAddComment, setWantToAddComment}) =>{
     const [newComment, setNewComment] = useState("");
     const [isPosting, setIsPosting] = useState(false);
-    const [statusString, setStatusString] = useState("Enter your comment here...");
-    console.log(`in addComment with article: ${article_id} and wantToAddCommment=${wantToAddComment}`);
+    const [statusString, setStatusString] = useState("STATUS: No comment entered yet...");
+    // console.log(`in addComment, article: ${article_id} wantToAddCommment=${wantToAddComment} , isposting = ${isPosting}`);
     
     const handleSubmit = (event) => {
         event.preventDefault();
         setIsPosting(true);
         const postObj = {
-            username: "MikeG777",
-            body: newComment,
+            username: "jessjelly", //NOTE - HARDCODED HERE FOR THE MOMENT
+            body: newComment, //body is the newComment state
         };
-        console.log(article_id);
-        console.table(postObj);
         postComment(article_id, postObj)
-        .then(()=>{
+        .then((res)=>{
             //IF success: comment will be rendered after this by CommentsDisplay in SingleArticle
-            setStatusString("Success - your comment has been posted - you will find it below");
+            setWantToAddComment(false);
         })
-        .catch(()=>{
+        .catch((err)=>{
             //IF API issue: let user know
-            setStatusString("Comment failed to load - please try to submit again");
+            setStatusString("STATUS: Comment failed to load - please try to submit again");
         });
+
+        //ISSUE - THIS SHOULD BE IN THE 'THEN' ABOVE 
+        // BUT, I GET 'TOO MANY RE-RENDERS' ERROR FROM AXIOS
         setIsPosting(false);
     }
 
     
     if(isPosting){
         //IF still rendering
-        setStatusString("Comment is being inserted - please wait ...");
+        setStatusString("STATUS: Comment is being inserted - please wait ...");
     }
 
     if(!wantToAddComment){
-        console.log('not wantingtoadd');
         return;
     }
 
-    // setWantToAddComment(false);
 
     return(
         <form onSubmit={handleSubmit} className="addCommentForm">
-            <label htmlFor="commentTextBox">Your comment on the article</label>
             <textarea
                 id="commentTextBox"
-                placeholder="Enter your comment here..."
+                placeholder="Enter your comment on the article here..."
                 onChange={(event) => {
                     setNewComment(event.target.value);
                 }}>
             </textarea>
-            <p>{statusString}</p>
+            <p id="statusString"><b>{statusString}</b></p>
             <button type="submit">Submit comment</button>
         </form>
     )

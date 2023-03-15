@@ -33,7 +33,7 @@ const SingleArticle = () => {
 
     //DEAL WITH ADDING A COMMENT
     const addComment = () => {
-        console.log("asasdasd");
+        console.log("about to step into AddComment...");
         return <AddComment article_id={article_id}/>;
     }
 
@@ -71,6 +71,7 @@ const SingleArticle = () => {
                 setWantToAddComment={setWantToAddComment}/>
             <CommentsDisplay 
                 article_id={article_id}
+                wantToAddComment={wantToAddComment} 
                 setCommentToDel={setCommentToDel}/>
         </div>
     )

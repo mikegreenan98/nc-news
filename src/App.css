@@ -13,9 +13,6 @@
   max-height: 70px;
 }
 
-.singleArticleImage{
-  max-height: 200px;
-}
 
 #articlesFilter {
   background-color: #4BD9EF;
@@ -35,6 +32,18 @@ button{
   margin-right: 2rem;
 }
 
+#currentUserName{
+  font-size: 1rem;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+#currentUserText{
+  font-size: 0.7rem;
+  text-align: right;
+  padding-right: 1rem;
+}
+
 /* Maplestory colour range from colormind.com */
 h4 {
 background-color: #D0C5C5;
@@ -48,6 +57,7 @@ background-color: #4BD9EF;
   background-color: #22A5D8;
   margin: 0.5rem;
 }
+
 
 .postedBy {
   font-size: 0.7rem;
@@ -75,10 +85,18 @@ background-color: #4BD9EF;
   margin-bottom: 2rem;
 }
 
+.singleArticleImage{
+  max-height: 200px;
+}
+
 .singleArticleTitle , .commentsListTitle{
   margin-top: 0.05rem;
   padding-top: 2rem;
   font-size: 1.4rem;
+}
+
+#statusString {
+  font-size: 0.8rem;
 }
 
 ul{
