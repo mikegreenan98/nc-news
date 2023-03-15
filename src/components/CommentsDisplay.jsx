@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 import { fetchComments } from "../api";
 
 
-const CommentsDisplay = ({article_id, setCommentToDel}) => {
+const CommentsDisplay = ({article_id, wantToAddComment, setCommentToDel}) => {
 
     const [isLoading, setIsLoading] = useState(true);
     const [commentsList, setCommentsList] = useState([]);
@@ -13,7 +13,7 @@ const CommentsDisplay = ({article_id, setCommentToDel}) => {
             setCommentsList(comments);
             setIsLoading(false);
         });
-    },[article_id]);
+    },[article_id, wantToAddComment]);
 
     if(isLoading) {return <h2>Loading comments...</h2>}
     return(
