@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 const TopicsFilter = ({setTopicFilter, topicFilter}) => {
     const [isLoading, setIsLoading] = useState(false);
     const [topicsList, setTopicsList] = useState([]);
-    console.log(`In topicsfilter, isLoading =${isLoading} and topicFilter=${topicFilter}`);
     const navigate = useNavigate();
     
     //fetch all topics from the API
@@ -34,19 +33,17 @@ const TopicsFilter = ({setTopicFilter, topicFilter}) => {
         <div>
         <label htmlFor="selectedTopic">Select a topic to see all related articles: </label>
         <select
-        defaultValue={topicFilter} //keep display showing last chosen topic
+        defaultValue={"noSelectionYet"}
         name=""
         id="selectedTopic"
-        onClick={(event)=>{
-            setTopicFilter(event.target.value);
-            // navigate(`/articles?topic=${event.target.value}`);
-            // navigate(`/articles?topic=${topicFilter}`);
-            // <Link to = {`/articles?topic=football`}></Link>
-            console.log("ISSUE - ABOVE LINK OR NAVIGATE DON'T WORK");
+        onChange={(event)=>{
+            setTopicFilter(event.target.value); 
+            navigate(`/articles?topic=${event.target.value}`);
         }}
         >
+        <option id="noSelectionYet" disabled={true} value="noSelectionYet">select topic</option>
         {topicsList.map((topic,index) => {
-            return <option><b>{topic.slug}</b></option>
+            return <option>{topic.slug}</option>
         })}
         </select>
         </div>

@@ -8,7 +8,6 @@ const DisplayArticlesForTopic = ({topicFilter, setTopicFilter}) => {
     console.log('DisplayArticlesForTopic - topicFIlter: ' + topicFilter);
     const {topicFromParams} = useParams();
     console.log('DisplayArticlesForTopic - topcFromParams ' + topicFromParams);
-    console.log("ISSUE - CAN'T USE PARAMS BECAUSE LINKS NOT WORKING");
 
     const [articlesForTopic, setArticlesForTopic] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -28,7 +27,7 @@ const DisplayArticlesForTopic = ({topicFilter, setTopicFilter}) => {
 
     if(isLoading) {return <h2>Loading articles for {topicFilter} topic...</h2>}
 
-    return <RenderArticlesList list={articlesForTopic} setTopicFilter={setTopicFilter}/>
+    return <RenderArticlesList list={articlesForTopic}/>
     
 }
 

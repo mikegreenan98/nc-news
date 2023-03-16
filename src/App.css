@@ -95,6 +95,11 @@ button:hover{
 
 }
 
+#noSelectionYet{
+  color: #CD323B;
+  font-style: italic;
+}
+
 .postedBy {
   font-size: 0.7rem;
   text-align: left;
@@ -107,7 +112,7 @@ button:hover{
 }
 
 #selectedTopic {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-top: 1rem;
 }
 

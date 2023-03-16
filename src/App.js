@@ -9,7 +9,6 @@ import ErrorPath from './components/ErrorPath';
 
 
 function App() {
-console.log('app');
   return (
       <div className="App">
       <Header/>
@@ -21,10 +20,6 @@ console.log('app');
         <Route path = "/articles/:article_id" element={<SingleArticle/>}>
         </Route>
         <Route path = "/topics" element={<Topics/>}>
-        </Route>
-        <Route path = "/articles?topic=:topic_id" element={<DisplayArticlesForTopic/>}>
-        </Route>
-        <Route path = "/articles?topic=football" element={<DisplayArticlesForTopic/>}>
         </Route>
         {/* <Route> path="*" element={<ErrorPath/>}</Route> */}
       </Routes>
