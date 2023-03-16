@@ -16,9 +16,9 @@ const RenderArticlesList = ({list}) => {
                         <img className="articleImage" src={article.article_img_url} alt=""></img>
                         <p>Topic: {article.topic}</p>
                         <p>Votes: {article.votes}</p>
-                        <p>Date: {article.created_at.substring(0,10)}</p>
+                        <p>Date: {new Date(article.created_at).toDateString().substring(4,)}</p>
                         <Link to={`/articles/${article.article_id}`}>
-                        <button>View this article</button>
+                        <button className = "ButtonViewArticle">View this article</button>
                         </Link>
                     </li>
                     </div>);

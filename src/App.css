@@ -14,8 +14,10 @@
 
 .articleCard {
   background-color: #D0C5C5;
-  /* margin: 0.1rem; */
+  margin: 0.5rem;
   font-size: 0.7rem;
+  border: 0.5rem solid #3E2F20;
+
 }
 
 
@@ -27,18 +29,30 @@
 #articlesFilter {
   background-color: #4BD9EF;
   color: white;
-  margin: 0.1rem;
+  margin: 0.5rem;
+  border: 0.5rem solid #3E2F20;
+
 }
 
 button{
   margin-left: 0.2rem;
   margin-right: 0.2rem;
   border-radius: 10%;
+  background-color: #22A5D8;
+
 }
 
 button:hover{
   background-color: #CD323B;
   transition: 0.7s;
+}
+
+.buttonAtHeader {
+  background-color: #D0C5C5;
+}
+
+.ButtonViewArticle{
+  margin-bottom: 0.5rem;
 }
 
 .commentBox{
@@ -58,8 +72,8 @@ button:hover{
   margin: 0.2rem;
   color: black;
   background: #4BD9EF;
-  border: 0.6rem solid #4BD9EF;
-  border-radius: 45%;
+  border: 0.4rem solid #4BD9EF;
+  border-radius: 50%;
   text-align:center;
 
   /* text-align: right; */
@@ -71,6 +85,8 @@ button:hover{
   margin: 0.1rem;
   padding: 0%;
   /* max-height: 10rem; */
+  border: 0.5rem solid #3E2F20;
+
 }
 
 .headerText{
@@ -100,6 +116,11 @@ button:hover{
   font-style: italic;
 }
 
+#orderBanner, #sortBanner {
+  color:#3E2F20;
+  font-size: 0.8rem;
+}
+
 .postedBy {
   font-size: 0.7rem;
   text-align: left;
@@ -112,7 +133,7 @@ button:hover{
 }
 
 #selectedTopic {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   margin-top: 1rem;
 }
 

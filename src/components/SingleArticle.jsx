@@ -48,7 +48,9 @@ const SingleArticle = () => {
             <p className = "singleArticleTitle"><b>{currentArticle.title}</b></p>
             <img className="singleArticleImage" src={currentArticle.article_img_url} alt=""></img>
             <p className="quote"><i>{currentArticle.body}</i></p>
-            <p className="postedBy">Posted by <b>{currentArticle.author}</b> on <b>{currentArticle.created_at.substring(0,10)}</b> ~~~ Votes: <b>{currentArticle.votes}</b></p>
+            {/* <p className="postedBy">Posted by <b>{currentArticle.author}</b> on <b>{currentArticle.created_at.substring(0,10)}</b> ~~~ Votes: <b>{currentArticle.votes}</b></p> */}
+            <p className="postedBy">Posted by <b>{currentArticle.author}</b> on <b>{new Date(currentArticle.created_at).toDateString().substring(4,)}</b> ~~~ Votes: <b>{currentArticle.votes}</b></p>
+
             <div className="singleArticleCardInners">
             <button onClick={() => {
                 incVotes(1);
@@ -56,11 +58,7 @@ const SingleArticle = () => {
             <button onClick={() => {
                 incVotes(-1);
             }}>Vote against</button>
-            {/* <button>Add comment</button> */}
-            {/* <button onClick={addComment}>Add comment</button> */}
-            {/* <button onClick={<AddComment article_id={article_id}/>}>Add comment</button> */}
             <button onClick={()=>{setWantToAddComment(true)}}>Add comment</button>
-            {/* ISSUE - HOW TO CALL ADDCOMMENT COMPONENT ONLY AFTER CLICKING ???? */}
             <Link to={`/articles/`}>
                 <button>Return to articles</button>
             </Link>
