@@ -22,21 +22,7 @@ const ArticlesFilter = ({setCurrentFilter}) => {
             <div id="articlesFilter">
                 <form>
 
-                    <label id="orderBanner" htmlFor="order">Select an order to view articles in: </label>
-                    <select
-                    value={order}
-                    name="order"
-                    id="order"
-                    onChange={(event)=>{
-                        setOrder(event.target.value);
-                    }}
-                    >
-                        <option id="noSelectionYet" disabled={true} value="noSelectionYet">select an order</option>
-                        <option id="DESC" value="DESC">Descending</option>
-                        <option id="ASC" value="ASC">Ascending</option>
-                    </select>
-                    <br></br>
-                    <label id="sortBanner" htmlFor="sortBy">Select what to sort by: </label>
+                    <label id="sortBanner" htmlFor="sortBy">Select a property to sort by: </label>
                     <select
                     value={sortBy}
                     name="sortBy"
@@ -45,13 +31,29 @@ const ArticlesFilter = ({setCurrentFilter}) => {
                         setSortBy(event.target.value);
                     }}
                     >
-                        <option id="noSelectionYet" disabled={true} value="noSelectionYet">select sort_by</option>
+                        {/* <option id="noSelectionYet" disabled={true} value="noSelectionYet">select sort_by</option> */}
                         <option id="created_at" value="created_at">Date</option>
                         <option id="author" value="author">Author</option>
                         <option id="votes" value="votes">Votes</option>
                         <option id="title" value="title">Title</option>
                         <option id="topic" value="topic">Topic</option>
                         <option id="article_id" value="article_id">Id</option>
+                    </select>
+
+                    <br></br>
+
+                    <label id="orderBanner" htmlFor="order">Select order to view articles: </label>
+                    <select
+                    value={order}
+                    name="order"
+                    id="order"
+                    onChange={(event)=>{
+                        setOrder(event.target.value);
+                    }}
+                    >
+                        {/* <option id="noSelectionYet" disabled={true} value="noSelectionYet">select an order</option> */}
+                        <option id="DESC" value="DESC">Descending</option>
+                        <option id="ASC" value="ASC">Ascending</option>
                     </select>
 
                 </form>

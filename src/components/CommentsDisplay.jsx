@@ -25,7 +25,8 @@ const CommentsDisplay = ({article_id, wantToAddComment, setCommentToDel}) => {
             <div className="commentBox">
             <li key={comment.comment_id} className="articleCard">
                 <p className="quote">{comment.body}</p>
-                <p className="postedBy">Posted by <b>{comment.author}</b> on <b>{comment.created_at.substring(0,10)}</b> in response to article_id <b>{comment.article_id}</b> ~~~ Votes: <b>{comment.votes}</b></p>
+                <p className="postedBy">Posted by <b>{comment.author}</b> on <b>{new Date(comment.created_at).toDateString().substring(4,)}</b> in response to article_id <b>{comment.article_id}</b> ~~~ Votes: <b>{comment.votes}</b></p>
+                {/* <p className="postedBy">Posted by <b>{comment.author}</b> on <b>{comment.created_at.substring(0,10)}</b> in response to article_id <b>{comment.article_id}</b> ~~~ Votes: <b>{comment.votes}</b></p> */}
                 {/* <button>TBD deleteUserComment</button> */}
             </li></div>);
         })}

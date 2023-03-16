@@ -12,9 +12,16 @@
   text-align: center;
 }
 
+.article {
+  margin-left: 0rem;
+  margin-right: 0rem;
+}
+
 .articleCard {
   background-color: #D0C5C5;
-  margin: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 2rem;
   font-size: 0.7rem;
   border: 0.5rem solid #3E2F20;
 
@@ -29,15 +36,20 @@
 #articlesFilter {
   background-color: #4BD9EF;
   color: white;
-  margin: 0.5rem;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0rem;
   border: 0.5rem solid #3E2F20;
+  text-align: center;
+  padding-bottom: 0.3rem;
 
 }
 
 button{
   margin-left: 0.2rem;
   margin-right: 0.2rem;
-  border-radius: 10%;
+  border-radius: 5%;
   background-color: #22A5D8;
 
 }
@@ -56,9 +68,15 @@ button:hover{
 }
 
 .commentBox{
-  border-bottom: 0.1rem solid #3E2F20;
-  border-top: 0.2rem solid #3E2F20;
-  margin-right: 2rem;
+  /* border-bottom: 0.1rem solid #3E2F20; */
+  /* border-top: 0.2rem solid #3E2F20; */
+  margin-right: 1rem;
+  margin-left: 0rem;
+}
+
+.commentList {
+  margin-right: 0rem;
+  margin-left: 0rem;
 }
 
 /* #currentUserName{
@@ -70,11 +88,12 @@ button:hover{
 #currentUserText{
   font-size: 0.6rem;
   margin: 0.2rem;
-  color: black;
-  background: #4BD9EF;
+  color:#3E2F20;
+  background-color: #D0C5C5;
   border: 0.4rem solid #4BD9EF;
-  border-radius: 50%;
+  border-radius: 35%;
   text-align:center;
+  float:inline-end;
 
   /* text-align: right; */
   /* padding-right: 1rem; */
@@ -112,13 +131,23 @@ button:hover{
 }
 
 #noSelectionYet{
-  color: #CD323B;
+  color:black;
   font-style: italic;
 }
 
 #orderBanner, #sortBanner {
   color:#3E2F20;
   font-size: 0.8rem;
+  margin-right: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+#order, #sortBy {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  background-color: #22A5D8;
+  color: black;
+  border-radius: 5%;
 }
 
 .postedBy {
