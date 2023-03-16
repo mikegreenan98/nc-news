@@ -22,12 +22,12 @@ const DisplayArticlesForTopic = ({topicFilter, setTopicFilter}) => {
     },[topicFilter]);
     
     if (topicFilter === ""){
+        console.log('no filter yet - so returning without displaying')
         return;
     }
+
     if(isLoading) {return <h2>Loading articles for {topicFilter} topic...</h2>}
-    if(topicFilter === {}) {
-        return;
-    }
+
     return <RenderArticlesList list={articlesForTopic} setTopicFilter={setTopicFilter}/>
     
 }

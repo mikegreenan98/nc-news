@@ -11,16 +11,14 @@ const Topics = () => {
     console.log("ISSUE - CAN'T USE LINKS SO HAVE TO NAVIGATE VIA HERE");
     return(
         <div>
-            {topicFilter === "" ? 
             <TopicsFilter 
                 topicFilter={topicFilter} 
                 setTopicFilter={setTopicFilter}
-            /> :
+            />
             <DisplayArticlesForTopic 
                 topicFilter={topicFilter}
                 setTopicFilter={setTopicFilter}
             />
-            }
         </div>
     )
 }

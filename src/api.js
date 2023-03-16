@@ -43,6 +43,10 @@ export const fetchTopics = () => {
 };
 
 export const fetchArticlesForTopic = (topic) => {
-return newsApi.get(`/articles/?topic=${topic}`).then((res) => {
-  return res.data.articles;});
+  if(topic === ""){
+    //catch case where initial rendering of DisplayArticlesForTopic tries to call this
+    return Promise.reject();
+  }
+  return newsApi.get(`/articles/?topic=${topic}`).then((res) => {
+    return res.data.articles;});
 };

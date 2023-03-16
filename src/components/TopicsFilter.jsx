@@ -22,14 +22,8 @@ const TopicsFilter = ({setTopicFilter, topicFilter}) => {
         })
     },[topicFilter]);
     
-    const handleChange = (event) =>{
-        setTopicFilter(event.target.value);
-        console.log("event.target.value is " + event.target.value);
-        // navigate(`/articles?topic=${topicFilter}`);
-        // <Link to = {`/articles?topic=${topicFilter}`}/>
-        console.log("ISSUE - ABOVE LINK OR NAVIGATE DON'T WORK");
-    }
-        
+    // }
+    
     if(isLoading) {
         return <h2>Loading topics...</h2>
     };
@@ -40,14 +34,19 @@ const TopicsFilter = ({setTopicFilter, topicFilter}) => {
         <div>
         <label htmlFor="selectedTopic">Select a topic to see all related articles: </label>
         <select
-          name=""
-          id="selectedTopic"
-        //   value={topicFilter} //NOT SURE HOW TO USE THIS ???
-          onChange={handleChange}
-          onClick={handleChange} //note - had to add this to capture if click on first item
+        defaultValue={topicFilter} //keep display showing last chosen topic
+        name=""
+        id="selectedTopic"
+        onClick={(event)=>{
+            setTopicFilter(event.target.value);
+            // navigate(`/articles?topic=${event.target.value}`);
+            // navigate(`/articles?topic=${topicFilter}`);
+            // <Link to = {`/articles?topic=football`}></Link>
+            console.log("ISSUE - ABOVE LINK OR NAVIGATE DON'T WORK");
+        }}
         >
         {topicsList.map((topic,index) => {
-            return <option>{topic.slug}</option>
+            return <option><b>{topic.slug}</b></option>
         })}
         </select>
         </div>

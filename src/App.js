@@ -19,8 +19,7 @@ console.log('app');
         </Route>
         <Route path = "/articles/:article_id" element={<SingleArticle/>}>
         </Route>
-        <Route path = "/topics" element=
-                                {<Topics/>}>
+        <Route path = "/topics" element={<Topics/>}>
         </Route>
         <Route path = "/articles?topic=:topic_id" element={<DisplayArticlesForTopic/>}>
         </Route>
