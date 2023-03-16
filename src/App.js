@@ -5,6 +5,7 @@ import SingleArticle from './components/SingleArticle';
 import Topics from './components/Topics';
 import { Routes, Route } from "react-router-dom";
 import DisplayArticlesForTopic from './components/DisplayArticlesForTopic';
+import ErrorPath from './components/ErrorPath';
 
 
 function App() {
@@ -25,6 +26,7 @@ console.log('app');
         </Route>
         <Route path = "/articles?topic=football" element={<DisplayArticlesForTopic/>}>
         </Route>
+        {/* <Route> path="*" element={<ErrorPath/>}</Route> */}
       </Routes>
     </div>
   );
