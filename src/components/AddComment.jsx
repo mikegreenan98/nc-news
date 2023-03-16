@@ -46,6 +46,8 @@ const AddComment = ({article_id, wantToAddComment, setWantToAddComment}) =>{
             {isPosting ? 
                 <p id="statusString"><b>{statusString}</b></p> : null}
             <button type="submit">Submit comment</button>
+            {/* {isPosting ? 
+            <button type="submit">Submit comment</button> : null} */}
         </form>
     )
 }

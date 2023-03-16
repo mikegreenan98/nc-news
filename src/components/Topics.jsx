@@ -1,10 +1,24 @@
+import {useState} from "react";
+import TopicsFilter from "./TopicsFilter";
+import DisplayArticlesForTopic from "./DisplayArticlesForTopic";
+
 const Topics = () => {
-    console.log('HERE IN Topics');
+    const [topicFilter, setTopicFilter] = useState("");
     return(
         <div>
-            <h1>In Topics</h1>
+            <TopicsFilter 
+                topicFilter={topicFilter} 
+                setTopicFilter={setTopicFilter}
+            />
+            {/* <DisplayArticlesForTopic 
+                topicFilter={topicFilter}
+                setTopicFilter={setTopicFilter}
+            /> */}
         </div>
     )
 }
+
+
+
 
 export default Topics;

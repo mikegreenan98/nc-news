@@ -4,10 +4,11 @@ import Articles from './components/Articles';
 import SingleArticle from './components/SingleArticle';
 import Topics from './components/Topics';
 import { Routes, Route } from "react-router-dom";
+import DisplayArticlesForTopic from './components/DisplayArticlesForTopic';
+import ErrorPath from './components/ErrorPath';
 
 
 function App() {
-
   return (
       <div className="App">
       <Header/>
@@ -18,9 +19,9 @@ function App() {
         </Route>
         <Route path = "/articles/:article_id" element={<SingleArticle/>}>
         </Route>
-        <Route path = "/topics" element=
-                                {<Topics/>}>
+        <Route path = "/topics" element={<Topics/>}>
         </Route>
+        {/* <Route> path="*" element={<ErrorPath/>}</Route> */}
       </Routes>
     </div>
   );

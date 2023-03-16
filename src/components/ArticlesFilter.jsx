@@ -11,7 +11,6 @@ const handleSubmit = (event) => {
 return(
         <div id="articlesFilter">
             <form onSubmit={handleSubmit}>
-                <textarea placeholder="topic?"></textarea>
                 <textarea placeholder="sort by?"></textarea>
                 <textarea placeholder="order by?"></textarea>
                 <button type="submit">Appy filter to Articles list below</button>

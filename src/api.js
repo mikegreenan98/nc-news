@@ -4,8 +4,13 @@ const newsApi = axios.create({
   baseURL: "https://mikeg-be-nc-news.onrender.com/api/",
 });
 
-export const fetchArticles = (filter) => {
-  return newsApi.get("/articles").then((res) => {
+// export const fetchArticles = (filter) => {
+//   return newsApi.get("/articles").then((res) => {
+//     return res.data.articles;});
+// };
+
+export const fetchArticles = (topic) => {
+  return newsApi.get("/articles", {params: {topic}}).then((res) => {
     return res.data.articles;});
 };
 
@@ -33,4 +38,19 @@ export const postComment = (article_id, postObj) => {
     return newsApi.post(`/articles/${article_id}/comments`, postObj).then((res) =>{
     return res.data.comment[0];
   });
+};
+
+export const fetchTopics = () => {
+  return newsApi.get(`/topics`).then((res) =>{
+  return res.data.topics;
+});
+};
+
+export const fetchArticlesForTopic = (topic) => {
+  if(topic === ""){
+    //catch case where initial rendering of DisplayArticlesForTopic tries to call this
+    return Promise.reject();
+  }
+  return newsApi.get(`/articles/?topic=${topic}`).then((res) => {
+    return res.data.articles;});
 };
