@@ -4,7 +4,7 @@ import { useState } from "react";
 
 
 const Articles = () => {
-  const [currentFilter, setCurrentFilter] = useState({ temp: "initial temp Filter" });
+  const [currentFilter, setCurrentFilter] = useState({});
 
     return(
         <div>

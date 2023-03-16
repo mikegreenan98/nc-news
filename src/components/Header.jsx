@@ -17,10 +17,10 @@ const Header = ({setZoomInArticle}) => {
       <h1 className="headerText"><b>NC NEWS</b></h1>
       <div id="navAndID">
         <Link to="/articles" className="navLink" style={linkStyle}>
-          <button>Articles</button>
+          <button className="buttonAtHeader">Articles</button>
         </Link>
         <Link to="/topics" className="navLink" style={linkStyle}>
-          <button>Topics</button>
+          <button className="buttonAtHeader">Topics</button>
           </Link>
         <p id="currentUserText">user<br></br><b>jessjelly</b></p>
       </div>

@@ -8,18 +8,14 @@ import { useSearchParams } from "react-router-dom";
 const ArticlesDisplay = ({currentFilter}) => {
     const [isLoading, setIsLoading] = useState(true);
     const [articlesList, setArticlesList] = useState([]);
-    const [searchParams, setSearchParams] = useSearchParams();
-
 
     useEffect(() => {
-        const topic = searchParams.get("topic");
         setIsLoading(true);
-        fetchArticles(topic).then((articles) => {
+        fetchArticles(currentFilter).then((articles) => {
             setArticlesList(articles);
             setIsLoading(false);
         });
-    },[currentFilter, searchParams]);
-
+    },[currentFilter]);
 
     if(isLoading) {return <h2>Loading articles...</h2>}
 

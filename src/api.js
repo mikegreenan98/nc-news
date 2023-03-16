@@ -4,13 +4,8 @@ const newsApi = axios.create({
   baseURL: "https://mikeg-be-nc-news.onrender.com/api/",
 });
 
-// export const fetchArticles = (filter) => {
-//   return newsApi.get("/articles").then((res) => {
-//     return res.data.articles;});
-// };
-
-export const fetchArticles = (topic) => {
-  return newsApi.get("/articles", {params: {topic}}).then((res) => {
+export const fetchArticles = (paramsObj) => {
+  return newsApi.get("/articles", {params: paramsObj}).then((res) => {
     return res.data.articles;});
 };
 
@@ -34,7 +29,6 @@ export const patchCommentVote = (article, inc) => {
 };
 
 export const postComment = (article_id, postObj) => {
-  // return newsApi.post(`/articles/77777777/comments`, postObj).then((res) =>{
     return newsApi.post(`/articles/${article_id}/comments`, postObj).then((res) =>{
     return res.data.comment[0];
   });
