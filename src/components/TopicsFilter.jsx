@@ -4,25 +4,44 @@ import {useState, useEffect} from "react";
 import { fetchTopics} from "../api";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import ErrorAPI from "./ErrorAPI";
+
 
 
 const TopicsFilter = ({setTopicFilter, topicFilter}) => {
     const [isLoading, setIsLoading] = useState(false);
     const [topicsList, setTopicsList] = useState([]);
+    const [error, setError] = useState(null);
     const navigate = useNavigate();
     
     //fetch all topics from the API
     useEffect(() => {
         setIsLoading(true);
+        setError(null);
         fetchTopics()
         .then((topics) => {
             setTopicsList(topics);
             setIsLoading(false);
         })
+        .catch((errorObj)=>{
+            console.log(errorObj);
+            setError(errorObj);
+        })
     },[topicFilter]);
     
     // }
     
+    if(error !== null){
+        return(
+            <div>
+            {console.log('calling errorApi from topicFilter with error =')}
+            {console.table(error)}
+            {console.log(error)}
+            <ErrorAPI errorObj={error} setError={setError}/>
+            </div>
+        ) 
+    }
+
     if(isLoading) {
         return <h2>Loading topics...</h2>
     };

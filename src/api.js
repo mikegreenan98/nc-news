@@ -5,18 +5,42 @@ const newsApi = axios.create({
 });
 
 export const fetchArticles = (paramsObj) => {
-  return newsApi.get("/articles", {params: paramsObj}).then((res) => {
-    return res.data.articles;});
+  return newsApi.get("/articles", {params: paramsObj})
+  .then((res) => {
+    return res.data.articles;})
+    .catch((error)=>{
+      const errorObj = {
+        msg: error.response.data.msg,
+        code: error.response.status,
+      }
+        return Promise.reject(errorObj);
+    });
 };
 
 export const fetchOneArticle = (article_id) => {
-    return newsApi.get(`/articles/${article_id}`).then((res) => {
-      return res.data.article[0];});
+    return newsApi.get(`/articles/${article_id}`)
+    .then((res) => {
+      return res.data.article[0];})
+    .catch((error)=>{
+      const errorObj = {
+        msg: error.response.data.msg,
+        code: error.response.status,
+      }
+        return Promise.reject(errorObj);
+    });
 };
   
 export const fetchComments = (article_id) => {
-  return newsApi.get(`/articles/${article_id}/comments`).then((res) => {
-    return res.data.comments;});
+  return newsApi.get(`/articles/${article_id}/comments`)
+  .then((res) => {
+    return res.data.comments;})
+  .catch((error)=>{
+    const errorObj = {
+      msg: error.response.data.msg,
+      code: error.response.status,
+    }
+    return Promise.reject(errorObj);
+  });
 };
 
 export const patchCommentVote = (article, inc) => {
@@ -24,20 +48,46 @@ export const patchCommentVote = (article, inc) => {
   patch.inc_votes = inc;
   return newsApi.patch(`/articles/${article.article_id}`, patch)
   .then((res) => {
-    return res.data;
-  })
-};
-
-export const postComment = (article_id, postObj) => {
-    return newsApi.post(`/articles/${article_id}/comments`, postObj).then((res) =>{
-    return res.data.comment[0];
+    return res.data;})
+  .catch((error)=>{
+    const errorObj = {
+      msg: error.response.data.msg,
+      code: error.response.status,
+    }
+    return Promise.reject(errorObj);
   });
 };
 
+export const postComment = (article_id, postObj) => {
+    return newsApi.post(`/articles/${article_id}/comments`, postObj)
+    .then((res) =>{
+    return res.data.comment[0];})
+    .catch((error)=>{
+      const errorObj = {
+        msg: error.response.data.msg,
+        code: error.response.status,
+      }
+      return Promise.reject(errorObj);
+    });
+};
+
 export const fetchTopics = () => {
-  return newsApi.get(`/topics`).then((res) =>{
-  return res.data.topics;
-});
+  return newsApi.get(`/topics`)
+  .then((res) =>{
+    console.log('OK in fetchTopics = ');
+    console.log(res);
+    return res.data.topics;})
+  .catch((error)=>{
+    console.log('got ar error in fetchTopics = ');
+    console.log(error);
+    const errorObj = {
+      msg: error.response.data.msg,
+      code: error.response.status,
+    }
+    return Promise.reject(errorObj);
+  });
+
+
 };
 
 export const fetchArticlesForTopic = (topic) => {
@@ -45,6 +95,14 @@ export const fetchArticlesForTopic = (topic) => {
     //catch case where initial rendering of DisplayArticlesForTopic tries to call this
     return Promise.reject();
   }
-  return newsApi.get(`/articles/?topic=${topic}`).then((res) => {
-    return res.data.articles;});
+  return newsApi.get(`/articles/?topic=${topic}`)
+  .then((res) => {
+    return res.data.articles;})
+  .catch((error)=>{
+    const errorObj = {
+      msg: error.response.data.msg,
+      code: error.response.status,
+    }
+    return Promise.reject(errorObj);
+  });
 };

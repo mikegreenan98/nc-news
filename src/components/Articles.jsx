@@ -4,6 +4,7 @@ import { useState } from "react";
 
 
 const Articles = () => {
+    console.log("in articles");
   const [currentFilter, setCurrentFilter] = useState({});
 
     return(

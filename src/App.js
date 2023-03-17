@@ -21,7 +21,7 @@ function App() {
         </Route>
         <Route path = "/topics" element={<Topics/>}>
         </Route>
-        {/* <Route> path="*" element={<ErrorPath/>}</Route> */}
+        <Route path="*" element={<ErrorPath/>}></Route>
       </Routes>
     </div>
   );

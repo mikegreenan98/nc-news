@@ -99,6 +99,14 @@ button:hover{
   /* padding-right: 1rem; */
 }
 
+#errorAPI {
+  color: #CD323B;
+  text-align: left;
+  margin-left: 2rem;
+  font-size: 0.7rem;
+}
+
+
 .header{
   background-color: #22A5D8;
   margin: 0.1rem;
