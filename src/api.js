@@ -74,12 +74,8 @@ export const postComment = (article_id, postObj) => {
 export const fetchTopics = () => {
   return newsApi.get(`/topics`)
   .then((res) =>{
-    console.log('OK in fetchTopics = ');
-    console.log(res);
     return res.data.topics;})
   .catch((error)=>{
-    console.log('got ar error in fetchTopics = ');
-    console.log(error);
     const errorObj = {
       msg: error.response.data.msg,
       code: error.response.status,

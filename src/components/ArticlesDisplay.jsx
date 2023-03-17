@@ -8,7 +8,6 @@ import ErrorAPI from "./ErrorAPI";
 
 
 const ArticlesDisplay = ({currentFilter}) => {
-    console.log('in articles display');
     const [isLoading, setIsLoading] = useState(true);
     const [articlesList, setArticlesList] = useState([]);
     const [error, setError] = useState(null);
@@ -23,7 +22,6 @@ const ArticlesDisplay = ({currentFilter}) => {
             setIsLoading(false);
         })
         .catch((errorObj)=>{
-            console.log(errorObj);
             setError(errorObj);
         });
     },[currentFilter]);
@@ -31,14 +29,10 @@ const ArticlesDisplay = ({currentFilter}) => {
     if(error !== null){
         return(
             <div>
-            {console.log('calling errorApi from articleDisplay with error =')}
-            {console.table(error)}
             <ErrorAPI errorObj={error} setError={setError}/>
             </div>
         ) 
     }
-
-
 
     if(isLoading) {return <h2>Loading articles...</h2>}
 

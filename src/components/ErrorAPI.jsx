@@ -2,15 +2,7 @@ import { useEffect } from "react";
 
 
 const ErrorAPI = ({errorObj, setError}) => {
-  console.log('in errorAPI with: ');
-  console.table(errorObj);
 
-  //FIX2 - commented out all this MIKE !!!
-  // useEffect(() => {
-  //   setError(null);
-  // // },[dependencyState]);
-  // },[]);
-  
   return (
     <div id="errorAPI">
       {/* <h1>Issue calling database, message received was: {errorMsg}</h1> */}

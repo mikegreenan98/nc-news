@@ -13,8 +13,6 @@ const SingleArticle = () => {
     const [wantToAddComment, setWantToAddComment] = useState(false);
     const [error, setError] = useState(null);
     const {article_id} = useParams();
-    console.log('entered SingleArticle with error: ');
-    console.log(error);
 
     // LOAD ARTICLE FROM API
     useEffect(() => {
@@ -26,7 +24,6 @@ const SingleArticle = () => {
             setIsLoading(false);
         })
         .catch((errorObj)=>{
-            console.log(errorObj);
             setError(errorObj);
         });
     },[article_id]);
@@ -52,8 +49,6 @@ const SingleArticle = () => {
     if(error !== null){
         return(
             <div>
-            {console.log('calling errorApi from singleArticle with error =')}
-            {console.table(error)}
             <ErrorAPI errorObj={error} setError={setError} dependencyState={currentArticle}/>
             </div>
         ) 
