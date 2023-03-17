@@ -38,10 +38,10 @@ const SingleArticle = () => {
     };
 
     //DEAL WITH ADDING A COMMENT
-    const addComment = () => {
-        console.log("about to step into AddComment...");
-        return <AddComment article_id={article_id}/>;
-    }
+    // const addComment = () => {
+    //     console.log("about to step into AddComment...");
+    //     return <AddComment article_id={article_id}/>;
+    // }
 
     //RENDER THE COMPONENT
     
