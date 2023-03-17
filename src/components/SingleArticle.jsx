@@ -4,21 +4,27 @@ import CommentsDisplay from "./CommentsDisplay";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import AddComment from "./AddComment";
+import ErrorAPI from "./ErrorAPI";
 
 const SingleArticle = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [currentArticle, setCurrentArticle] = useState(true);
-    const [commentToDel, setCommentToDel] = useState(null);
     const [wantToAddComment, setWantToAddComment] = useState(false);
+    const [error, setError] = useState(null);
     const {article_id} = useParams();
 
     // LOAD ARTICLE FROM API
     useEffect(() => {
         setIsLoading(true);
-        fetchOneArticle(article_id).then((article) => {
+        setError(null); // FIX 2: addd this here MIKE - it works!!!
+        fetchOneArticle(article_id) // i.e. only clears error when change article-id
+        .then((article) => {
             setCurrentArticle(article);
             setIsLoading(false);
-    });
+        })
+        .catch((errorObj)=>{
+            setError(errorObj);
+        });
     },[article_id]);
 
     // DEALING WITH VOTES
@@ -32,13 +38,21 @@ const SingleArticle = () => {
     };
 
     //DEAL WITH ADDING A COMMENT
-    const addComment = () => {
-        console.log("about to step into AddComment...");
-        return <AddComment article_id={article_id}/>;
-    }
-
+    // const addComment = () => {
+    //     console.log("about to step into AddComment...");
+    //     return <AddComment article_id={article_id}/>;
+    // }
 
     //RENDER THE COMPONENT
+    
+    if(error !== null){
+        return(
+            <div>
+            <ErrorAPI errorObj={error} setError={setError} dependencyState={currentArticle}/>
+            </div>
+        ) 
+    }
+    
     if(isLoading){
         return <h2>Loading the required article...</h2>;
     }
@@ -69,8 +83,7 @@ const SingleArticle = () => {
                 setWantToAddComment={setWantToAddComment}/>
             <CommentsDisplay 
                 article_id={article_id}
-                wantToAddComment={wantToAddComment} 
-                setCommentToDel={setCommentToDel}/>
+                wantToAddComment={wantToAddComment} />
         </div>
     )
 }

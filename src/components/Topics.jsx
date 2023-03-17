@@ -1,6 +1,6 @@
 import {useState} from "react";
 import TopicsFilter from "./TopicsFilter";
-import DisplayArticlesForTopic from "./DisplayArticlesForTopic";
+// import DisplayArticlesForTopic from "./DisplayArticlesForTopic";
 
 const Topics = () => {
     const [topicFilter, setTopicFilter] = useState("");
