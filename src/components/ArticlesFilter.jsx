@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
 
 
 const ArticlesFilter = ({setCurrentFilter}) => {
@@ -15,7 +14,7 @@ const ArticlesFilter = ({setCurrentFilter}) => {
     // doing this to avoid having a 'submit' button and handler on form below
     useEffect(()=>{
         setCurrentFilter({topic: topic, order: order, sort_by: sortBy});
-    },[topic,order,sortBy]);
+},[topic,order,sortBy]);
 
 
     return(
