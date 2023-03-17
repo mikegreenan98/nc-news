@@ -4,7 +4,6 @@ import Articles from './components/Articles';
 import SingleArticle from './components/SingleArticle';
 import Topics from './components/Topics';
 import { Routes, Route } from "react-router-dom";
-import DisplayArticlesForTopic from './components/DisplayArticlesForTopic';
 import ErrorPath from './components/ErrorPath';
 
 

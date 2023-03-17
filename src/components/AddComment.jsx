@@ -5,7 +5,7 @@ import { postComment } from "../api";
 
 const AddComment = ({article_id, wantToAddComment, setWantToAddComment}) =>{
     const [newComment, setNewComment] = useState("");
-    const [isPosting, setIsPosting] = useState(false);
+    // const [isPosting, setIsPosting] = useState(false);
     const [statusString, setStatusString] = useState("STATUS: No comment entered yet...");
     
     const handleSubmit = (event) => {
@@ -13,7 +13,7 @@ const AddComment = ({article_id, wantToAddComment, setWantToAddComment}) =>{
         if(newComment === ""){
             setStatusString("STATUS: Comments can not be empty - please insert some text");
         } else {
-            setIsPosting(true);
+            // setIsPosting(true);
             setStatusString("STATUS: Comment is being inserted - please wait ...");
             const postObj = {
                 username: "jessjelly", //NOTE - HARDCODED HERE FOR THE MOMENT
@@ -23,7 +23,7 @@ const AddComment = ({article_id, wantToAddComment, setWantToAddComment}) =>{
             .then((res)=>{
                 //IF success: comment will be rendered after this by CommentsDisplay in SingleArticle
                 setWantToAddComment(false);
-                setIsPosting(false);
+                // setIsPosting(false);
                 setNewComment("");
             })
             .catch((err)=>{

@@ -1,7 +1,6 @@
 import {useState, useEffect} from "react";
 import { fetchArticles } from "../api";
 import RenderArticlesList from "./RenderArticlesList"
-import { useSearchParams } from "react-router-dom";
 import ErrorAPI from "./ErrorAPI";
 
 

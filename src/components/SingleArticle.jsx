@@ -9,7 +9,6 @@ import ErrorAPI from "./ErrorAPI";
 const SingleArticle = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [currentArticle, setCurrentArticle] = useState(true);
-    const [commentToDel, setCommentToDel] = useState(null);
     const [wantToAddComment, setWantToAddComment] = useState(false);
     const [error, setError] = useState(null);
     const {article_id} = useParams();
@@ -84,8 +83,7 @@ const SingleArticle = () => {
                 setWantToAddComment={setWantToAddComment}/>
             <CommentsDisplay 
                 article_id={article_id}
-                wantToAddComment={wantToAddComment} 
-                setCommentToDel={setCommentToDel}/>
+                wantToAddComment={wantToAddComment} />
         </div>
     )
 }

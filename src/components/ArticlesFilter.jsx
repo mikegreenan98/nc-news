@@ -3,11 +3,11 @@ import { useSearchParams } from "react-router-dom";
 
 
 const ArticlesFilter = ({setCurrentFilter}) => {
-    const [searchParams2, setSearchParams2] = useSearchParams();
+    // const [searchParams2, setSearchParams2] = useSearchParams();
     const paramsObj = {};
-    paramsObj.topic = searchParams2.get("topic");
-    paramsObj.order = searchParams2.get("order");
-    paramsObj.sort_by = searchParams2.get("sort_by");
+    // paramsObj.topic = searchParams2.get("topic");
+    // paramsObj.order = searchParams2.get("order");
+    // paramsObj.sort_by = searchParams2.get("sort_by");
     const [topic, setTopic] = useState(paramsObj.topic);
     const [order, setOrder] = useState(paramsObj.order);
     const [sortBy, setSortBy] = useState(paramsObj.sort_by);
