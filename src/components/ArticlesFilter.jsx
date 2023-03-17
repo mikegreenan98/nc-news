@@ -17,7 +17,7 @@ const ArticlesFilter = ({setCurrentFilter}) => {
     useEffect(()=>{
         console.log(topic + order + sortBy);
         setCurrentFilter({topic: topic, order: order, sort_by: sortBy});
-},[topic,order,sortBy]); 
+},[topic,order,sortBy,setCurrentFilter]);  
         // },[]); 
 // },[sortBy]); 
 
