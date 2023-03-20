@@ -2,24 +2,19 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 const ArticlesFilter = ({setCurrentFilter}) => {
-    // const [searchParams2, setSearchParams2] = useSearchParams();
     const [searchParams2] = useSearchParams();
-    const paramsObj = {};
-    paramsObj.topic = searchParams2.get("topic");
-    paramsObj.order = searchParams2.get("order");
-    paramsObj.sort_by = searchParams2.get("sort_by");
-    // const [topic, setTopic] = useState(paramsObj.topic);
-    const [topic] = useState(paramsObj.topic);
-    const [order, setOrder] = useState(paramsObj.order);
-    const [sortBy, setSortBy] = useState(paramsObj.sort_by);
+    const [topic] = useState(null);
+    const [order, setOrder] = useState(null);
+    const [sortBy, setSortBy] = useState(null);
 
     // doing this to avoid having a 'submit' button and handler on form below
     useEffect(()=>{
-        console.log(topic + order + sortBy);
-        setCurrentFilter({topic: topic, order: order, sort_by: sortBy});
-},[topic,order,sortBy,setCurrentFilter]);  
-        // },[]); 
-// },[sortBy]); 
+        setCurrentFilter({
+            topic: searchParams2.get("topic"), 
+            order: order !== null ? order : searchParams2.get("order"), 
+            sort_by: sortBy !== null ? sortBy : searchParams2.get("sort_by"),
+        });
+},[topic,order,sortBy,setCurrentFilter, searchParams2]);  
 
 
     return(

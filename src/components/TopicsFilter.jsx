@@ -1,5 +1,3 @@
-
-
 import {useState, useEffect} from "react";
 import { fetchTopics} from "../api";
 import { useNavigate } from "react-router-dom";
@@ -33,9 +31,6 @@ const TopicsFilter = ({setTopicFilter, topicFilter}) => {
     if(error !== null){
         return(
             <div>
-            {console.log('calling errorApi from topicFilter with error =')}
-            {console.table(error)}
-            {console.log(error)}
             <ErrorAPI errorObj={error} setError={setError}/>
             </div>
         ) 
