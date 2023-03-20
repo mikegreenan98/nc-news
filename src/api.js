@@ -5,6 +5,8 @@ const newsApi = axios.create({
 });
 
 export const fetchArticles = (paramsObj) => {
+  console.log('in APIL with');
+  console.log(paramsObj);
   return newsApi.get("/articles", {params: paramsObj})
   .then((res) => {
     return res.data.articles;})
