@@ -5,7 +5,7 @@ const ArticlesFilter = ({setCurrentFilter}) => {
     const [searchParams2] = useSearchParams();
     const [order, setOrder] = useState(searchParams2.get("order"));
     const [sortBy, setSortBy] = useState(searchParams2.get("sort_by"));
-    const [topic, setTopic] = useState(searchParams2.get("topic"));
+    const [topic] = useState(searchParams2.get("topic"));
 
     // doing this to avoid having a 'submit' button and handler on form below
     useEffect(()=>{
