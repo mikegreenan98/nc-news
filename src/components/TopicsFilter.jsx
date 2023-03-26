@@ -56,7 +56,7 @@ const TopicsFilter = ({setTopicFilter, topicFilter}) => {
         >
         <option id="noSelectionYet" disabled={true} value="noSelectionYet">select topic</option>
         {topicsList.map((topic,index) => {
-            return <option>{topic.slug}</option>
+            return <option key={index}>{topic.slug}</option>
         })}
         </select>
         </div>
