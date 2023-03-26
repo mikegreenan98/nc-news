@@ -23,7 +23,7 @@ const ArticlesFilter = ({setCurrentFilter}) => {
 
                     <label id="sortBanner" htmlFor="sortBy">Select a property to sort by: </label>
                     <select
-                    value={sortBy}
+                    value={sortBy !== null ? sortBy : "created_at"}
                     name="sortBy"
                     id="sortBy"
                     onChange={(event)=>{
@@ -43,7 +43,7 @@ const ArticlesFilter = ({setCurrentFilter}) => {
 
                     <label id="orderBanner" htmlFor="order">Select order to view articles: </label>
                     <select
-                    value={order}
+                    value={order !== null ? order : "DESC"}
                     name="order"
                     id="order"
                     onChange={(event)=>{
