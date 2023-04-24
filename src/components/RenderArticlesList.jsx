@@ -1,26 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // import {UUID} from 'uuidjs';
 // import { UUID } from "https://unpkg.com/uuidjs@^5";
 const uuid = require('uuid');
 
 const RenderArticlesList = ({list}) => {
-    // const uuid = UUID.generate(); 
-    
-    // useEffect(()=>{
-    //     // forceUpdate();
-    // },[list]);
+
+    // bizarre - only re-renders on change to list if I use a temporary local state (list777)
+    const [list777, setList777] = useState([]);
+    useEffect(()=>{
+        setList777(list);
+    },[list]);
 
 
     return(
         <div>
             <ul>
-                {list.map((article,index) => {
+                {list777.map((article,index) => {
                     return(
                     <div key={uuid.v4()} className="article">
-                    {/* <li key={article.article_id} className="articleCard"> */}
-                    {/* <li key={index} className="articleCard"> */}
-                    {/* <li key={article.article_id+list.length*10} className="articleCard"> */}
                     <li key={uuid.v4()} className="articleCard">
                         <p key={article.title+uuid.v4()}>Title: {article.title}</p>
                         <p key={article.article_id+uuid.v4()}>Id: {article.article_id}</p>
