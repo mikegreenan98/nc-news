@@ -17,7 +17,7 @@ useEffect(()=>{
     });
 },[params,topic, order, sortBy, setCurrentFilter]);   
 
-    return(
+    return( 
             <div id="articlesFilter">
                 <form>
 
