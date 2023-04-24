@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import {UUID} from 'uuidjs';
-// import { UUID } from "https://unpkg.com/uuidjs@^5";
 const uuid = require('uuid');
 
 const RenderArticlesList = ({list}) => {
