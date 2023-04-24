@@ -8,10 +8,8 @@ const Articles = () => {
 
     return(
         <div>
-            <ArticleFilter
-                setCurrentFilter={setCurrentFilter}/>
-            <ArticlesDisplay 
-                currentFilter={currentFilter}/>
+            <ArticleFilter setCurrentFilter={setCurrentFilter}/>
+            <ArticlesDisplay currentFilter={currentFilter}/>
         </div>
     )
 }

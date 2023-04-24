@@ -89,6 +89,8 @@ export const fetchTopics = () => {
 };
 
 export const fetchArticlesForTopic = (topic) => {
+  console.log('in API with topic');
+  console.log(topic);
   if(topic === ""){
     //catch case where initial rendering of DisplayArticlesForTopic tries to call this
     return Promise.reject();

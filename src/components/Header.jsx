@@ -22,7 +22,7 @@ const Header = ({setZoomInArticle}) => {
         <Link to="/topics" className="navLink" style={linkStyle}>
           <button className="buttonAtHeader">Topics</button>
           </Link>
-        <p id="currentUserText">user<br></br><b>jessjelly</b></p>
+        <p id="currentUserText">user:<br></br><b>jessjelly</b></p>
       </div>
     </div>
   );
