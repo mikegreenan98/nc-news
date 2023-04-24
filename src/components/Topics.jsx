@@ -15,7 +15,7 @@ const Topics = () => {
                 setTopicFilter={setTopicFilter}
             /> */}
         </div>
-    )
+    ) 
 }
 
 

@@ -9,8 +9,9 @@ const RenderArticlesList = ({list}) => {
     // bizarre - only re-renders on change to list if I use a temporary local state (list777)
     const [list777, setList777] = useState([]);
     useEffect(()=>{
-        setList777(list);
-    },[list]);
+        setList777([...list]);
+        console.log(list777.length);
+},[list, list777.length]); 
 
 
     return(
