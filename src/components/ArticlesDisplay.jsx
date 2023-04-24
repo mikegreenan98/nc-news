@@ -2,8 +2,6 @@ import {useState, useEffect} from "react";
 import { fetchArticles } from "../api";
 import RenderArticlesList from "./RenderArticlesList"
 import ErrorAPI from "./ErrorAPI";
-import { Link } from "react-router-dom";
-const uuid = require('uuid');
 
 
 
