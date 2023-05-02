@@ -8,7 +8,7 @@ const RenderArticlesList = ({list}) => {
     const [list777, setList777] = useState([]);
     useEffect(()=>{
         setList777([...list]);
-        console.log(list777.length);
+        // console.log(list777.length);
 },[list, list777.length]); 
 
 

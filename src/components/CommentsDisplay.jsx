@@ -1,7 +1,6 @@
 import {useState, useEffect} from "react";
 import { fetchComments } from "../api";
 
-
 const CommentsDisplay = ({article_id, wantToAddComment, setCommentToDel}) => {
 
     const [isLoading, setIsLoading] = useState(true);
