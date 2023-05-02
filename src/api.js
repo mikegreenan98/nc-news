@@ -5,8 +5,8 @@ const newsApi = axios.create({
 });
 
 export const fetchArticles = (paramsObj) => {
-  console.log('in API with');
-  console.log(paramsObj);
+  // console.log('in API with');
+  // console.log(paramsObj);
   return newsApi.get("/articles", {params: paramsObj})
   .then((res) => {
     return res.data.articles;})
@@ -84,8 +84,6 @@ export const fetchTopics = () => {
     }
     return Promise.reject(errorObj);
   });
-
-
 };
 
 export const fetchArticlesForTopic = (topic) => {
@@ -98,6 +96,20 @@ export const fetchArticlesForTopic = (topic) => {
   return newsApi.get(`/articles/?topic=${topic}`)
   .then((res) => {
     return res.data.articles;})
+  .catch((error)=>{
+    const errorObj = {
+      msg: error.response.data.msg,
+      code: error.response.status,
+    }
+    return Promise.reject(errorObj);
+  });
+};
+
+
+export const fetchUsers = () => {
+  return newsApi.get(`/users`)
+  .then((res) =>{
+    return res.data.users;})
   .catch((error)=>{
     const errorObj = {
       msg: error.response.data.msg,

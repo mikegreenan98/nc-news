@@ -34,7 +34,7 @@ const ArticlesDisplay = ({currentFilter}) => {
     }
 
     if(isLoading) {return <h2>Loading articles...</h2>}
-    console.log(articlesList.length);
+    // console.log(articlesList.length);
 
     return <RenderArticlesList list={articlesList}/>
 }

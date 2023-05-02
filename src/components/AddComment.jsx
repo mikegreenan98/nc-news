@@ -1,22 +1,27 @@
 
 import { useState } from "react";
 import { postComment } from "../api";
+import { useContext } from "react";
+import { UserContext } from "../contexts/user";
 
 
 const AddComment = ({article_id, wantToAddComment, setWantToAddComment}) =>{
     const [newComment, setNewComment] = useState("");
-    // const [isPosting, setIsPosting] = useState(false);
     const [statusString, setStatusString] = useState("STATUS: No comment entered yet...");
+    const {user} = useContext(UserContext);
     
     const handleSubmit = (event) => {
         event.preventDefault();
         if(newComment === ""){
             setStatusString("STATUS: Comments can not be empty - please insert some text");
-        } else {
+        } else if(user === 'Anonomous'){
+            setStatusString("STATUS: You can't add anonomous comments - please login first");
+        }
+        else {
             // setIsPosting(true);
             setStatusString("STATUS: Comment is being inserted - please wait ...");
             const postObj = {
-                username: "jessjelly", //NOTE - HARDCODED HERE FOR THE MOMENT
+                username: user, //user id the global 'user' context
                 body: newComment, //body is the newComment state
             };
             postComment(article_id, postObj)
@@ -29,6 +34,7 @@ const AddComment = ({article_id, wantToAddComment, setWantToAddComment}) =>{
             .catch((err)=>{
                 //IF API issue: let user know
                 setStatusString("STATUS: Comment failed to load - please try to submit again");
+                console.log(err);
             });
         }
     }
