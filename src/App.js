@@ -6,9 +6,11 @@ import Topics from './components/Topics';
 import { Routes, Route } from "react-router-dom";
 import ErrorPath from './components/ErrorPath';
 import Users from './components/Users';
-
+const {debug} = require('./utils/debugger');
 
 function App() {
+  debug(`App`);
+ 
   return (
       <div className="App">
       <Header/>

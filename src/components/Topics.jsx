@@ -1,8 +1,10 @@
 import {useState} from "react";
 import TopicsFilter from "./TopicsFilter";
-// import DisplayArticlesForTopic from "./DisplayArticlesForTopic";
+const {debug} = require('../utils/debugger');
+
 
 const Topics = () => {
+    debug(`Topic`);
     const [topicFilter, setTopicFilter] = useState("");
     return(
         <div>

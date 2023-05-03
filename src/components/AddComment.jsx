@@ -3,9 +3,11 @@ import { useState } from "react";
 import { postComment } from "../api";
 import { useContext } from "react";
 import { UserContext } from "../contexts/user";
+const {debug} = require('../utils/debugger');
 
 
 const AddComment = ({article_id, wantToAddComment, setWantToAddComment}) =>{
+    debug(`AddComment`);
     const [newComment, setNewComment] = useState("");
     const [statusString, setStatusString] = useState("STATUS: No comment entered yet...");
     const {user} = useContext(UserContext);

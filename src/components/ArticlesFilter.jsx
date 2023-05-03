@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+const {debug} = require('../utils/debugger');
+
 
 const ArticlesFilter = ({setCurrentFilter}) => {
-
+debug(`ArticlesFilter`);
 const [order, setOrder] = useState(null);
 const [sortBy, setSortBy] = useState(null);
 const [topic] = useState(null);

@@ -2,10 +2,12 @@ import {useState, useEffect} from "react";
 import { fetchTopics} from "../api";
 import { useNavigate } from "react-router-dom";
 import ErrorAPI from "./ErrorAPI";
+const {debug} = require('../utils/debugger');
 
 
 
 const TopicsFilter = ({setTopicFilter, topicFilter}) => {
+    debug(`TopicFilter`);
     const [isLoading, setIsLoading] = useState(false);
     const [topicsList, setTopicsList] = useState([]);
     const [error, setError] = useState(null);

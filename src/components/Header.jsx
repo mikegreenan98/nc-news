@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import { useContext} from "react";
 import { UserContext } from "../contexts/user";
 import { AvatarContext } from "../contexts/avatar";
+const {debug} = require('../utils/debugger');
+
 
 const Header = ({setZoomInArticle}) => {
+  debug(`Header`);
 
   const linkStyle = {
     margin: "1rem",

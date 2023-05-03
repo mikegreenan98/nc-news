@@ -5,8 +5,11 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import AddComment from "./AddComment";
 import ErrorAPI from "./ErrorAPI";
+const {debug} = require('../utils/debugger');
+
 
 const SingleArticle = () => {
+    debug('SingleArticle');
     const [isLoading, setIsLoading] = useState(true);
     const [currentArticle, setCurrentArticle] = useState(true);
     const [wantToAddComment, setWantToAddComment] = useState(false);

@@ -1,7 +1,9 @@
 import {useState, useEffect} from "react";
 import { fetchComments } from "../api";
+const {debug} = require('../utils/debugger');
 
 const CommentsDisplay = ({article_id, wantToAddComment, setCommentToDel}) => {
+    debug(`CommentsDisplay`);
 
     const [isLoading, setIsLoading] = useState(true);
     const [commentsList, setCommentsList] = useState([]);
