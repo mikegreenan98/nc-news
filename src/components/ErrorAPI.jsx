@@ -1,6 +1,7 @@
+const {debug} = require('../utils/debugger');
 
 const ErrorAPI = ({errorObj, setError}) => {
-
+  debug(`ErrorAPI`);
   return (
     <div id="errorAPI">
       {/* <h1>Issue calling database, message received was: {errorMsg}</h1> */}

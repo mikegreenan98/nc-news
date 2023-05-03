@@ -4,10 +4,12 @@ import ErrorAPI from "./ErrorAPI";
 import { UserContext } from "../contexts/user";
 import { AvatarContext } from "../contexts/avatar";
 const uuid = require('uuid');
+const {debug} = require('../utils/debugger');
+
 
 
 const Users = () => {
-
+    debug(`Users`);
     const [users, SetUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);

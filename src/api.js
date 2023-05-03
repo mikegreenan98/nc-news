@@ -1,12 +1,15 @@
 import axios from "axios";
+const {debug} = require('./utils/debugger');
+
 
 const newsApi = axios.create({
   baseURL: "https://mikeg-be-nc-news.onrender.com/api/",
 });
 
 export const fetchArticles = (paramsObj) => {
-  // console.log('in API with');
-  // console.log(paramsObj);
+  debug(`fetchArticles`);
+  debug(paramsObj);
+
   return newsApi.get("/articles", {params: paramsObj})
   .then((res) => {
     return res.data.articles;})

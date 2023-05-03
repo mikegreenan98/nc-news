@@ -2,11 +2,14 @@ import {useState, useEffect} from "react";
 import { fetchArticles } from "../api";
 import RenderArticlesList from "./RenderArticlesList"
 import ErrorAPI from "./ErrorAPI";
+const {debug} = require('../utils/debugger');
 
 
 
 
 const ArticlesDisplay = ({currentFilter}) => {
+    debug(`ArticlesDisplay`);
+    debug(currentFilter);
     const [isLoading, setIsLoading] = useState(true);
     const [articlesList, setArticlesList] = useState([]);
     const [error, setError] = useState(null);

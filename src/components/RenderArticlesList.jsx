@@ -1,8 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 const uuid = require('uuid');
+const {debug} = require('../utils/debugger');
+
 
 const RenderArticlesList = ({list}) => {
+    debug(`RenderArticlesList`);
+    debug(list.length);
 
     // bizarre - only re-renders on change to list if I use a temporary local state (list777)
     const [list777, setList777] = useState([]);
